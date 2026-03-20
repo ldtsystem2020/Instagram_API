@@ -1,5 +1,9 @@
 # Instagram Private API
 
+<p align="center">
+  <img src="banner.svg" alt="Instagram_API Banner" width="100%">
+</p>
+
 繁體中文 | **[English](README.md)**
 
 從 Android app 封包逆向工程的 Instagram 私有 API Python 客戶端。

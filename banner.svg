@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640">
+  <defs>
+    <!-- Cyberpunk gradient background -->
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a0a1a"/>
+      <stop offset="50%" style="stop-color:#0d1117"/>
+      <stop offset="100%" style="stop-color:#0a0e1a"/>
+    </linearGradient>
+    <!-- Neon glow filter -->
+    <filter id="glow-cyan" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-pink" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="glow-title" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <!-- Grid pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#00ffcc" stroke-width="0.3" opacity="0.15"/>
+    </pattern>
+    <!-- Scanline pattern -->
+    <pattern id="scanlines" width="4" height="4" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="4" y2="0" stroke="#ffffff" stroke-width="0.5" opacity="0.03"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bg)"/>
+
+  <!-- Grid overlay -->
+  <rect width="1280" height="640" fill="url(#grid)"/>
+
+  <!-- Perspective grid lines (bottom) -->
+  <g opacity="0.12" stroke="#00ffcc" stroke-width="0.8">
+    <line x1="640" y1="400" x2="0" y2="640"/>
+    <line x1="640" y1="400" x2="160" y2="640"/>
+    <line x1="640" y1="400" x2="320" y2="640"/>
+    <line x1="640" y1="400" x2="480" y2="640"/>
+    <line x1="640" y1="400" x2="640" y2="640"/>
+    <line x1="640" y1="400" x2="800" y2="640"/>
+    <line x1="640" y1="400" x2="960" y2="640"/>
+    <line x1="640" y1="400" x2="1120" y2="640"/>
+    <line x1="640" y1="400" x2="1280" y2="640"/>
+  </g>
+  <g opacity="0.08" stroke="#00ffcc" stroke-width="0.5">
+    <line x1="0" y1="460" x2="1280" y2="460"/>
+    <line x1="0" y1="510" x2="1280" y2="510"/>
+    <line x1="0" y1="550" x2="1280" y2="550"/>
+    <line x1="0" y1="585" x2="1280" y2="585"/>
+    <line x1="0" y1="615" x2="1280" y2="615"/>
+  </g>
+
+  <!-- Decorative circuit lines left -->
+  <g stroke="#ff0044" stroke-width="1.5" fill="none" opacity="0.4" filter="url(#glow-pink)">
+    <path d="M 0 200 L 80 200 L 100 180 L 180 180"/>
+    <circle cx="180" cy="180" r="3" fill="#ff0044"/>
+    <path d="M 0 220 L 60 220 L 80 240 L 140 240 L 160 220 L 200 220"/>
+    <circle cx="200" cy="220" r="3" fill="#ff0044"/>
+    <path d="M 0 260 L 100 260 L 120 280 L 160 280"/>
+    <circle cx="160" cy="280" r="3" fill="#ff0044"/>
+  </g>
+
+  <!-- Decorative circuit lines right -->
+  <g stroke="#00ffcc" stroke-width="1.5" fill="none" opacity="0.4" filter="url(#glow-cyan)">
+    <path d="M 1280 200 L 1200 200 L 1180 180 L 1100 180"/>
+    <circle cx="1100" cy="180" r="3" fill="#00ffcc"/>
+    <path d="M 1280 220 L 1220 220 L 1200 240 L 1140 240 L 1120 220 L 1080 220"/>
+    <circle cx="1080" cy="220" r="3" fill="#00ffcc"/>
+    <path d="M 1280 260 L 1180 260 L 1160 280 L 1120 280"/>
+    <circle cx="1120" cy="280" r="3" fill="#00ffcc"/>
+  </g>
+
+  <!-- Hex decorations -->
+  <g opacity="0.15" fill="none" stroke="#00ffcc" stroke-width="1">
+    <polygon points="100,80 120,68 140,80 140,100 120,112 100,100"/>
+    <polygon points="1140,520 1160,508 1180,520 1180,540 1160,552 1140,540"/>
+    <polygon points="80,480 100,468 120,480 120,500 100,512 80,500"/>
+    <polygon points="1160,100 1180,88 1200,100 1200,120 1180,132 1160,120"/>
+  </g>
+
+  <!-- Corner brackets -->
+  <g stroke="#ff0044" stroke-width="2" fill="none" opacity="0.6">
+    <!-- Top left -->
+    <path d="M 30 30 L 30 60" />
+    <path d="M 30 30 L 60 30" />
+    <!-- Top right -->
+    <path d="M 1250 30 L 1250 60" />
+    <path d="M 1250 30 L 1220 30" />
+    <!-- Bottom left -->
+    <path d="M 30 610 L 30 580" />
+    <path d="M 30 610 L 60 610" />
+    <!-- Bottom right -->
+    <path d="M 1250 610 L 1250 580" />
+    <path d="M 1250 610 L 1220 610" />
+  </g>
+
+  <!-- Data stream decoration left side -->
+  <g opacity="0.2" fill="#00ffcc" font-family="Consolas, monospace" font-size="10">
+    <text x="40" y="150">0x49 0x47 0x50 0x52</text>
+    <text x="40" y="165">BLOKS::VERSIONED</text>
+    <text x="40" y="380">SYS.INIT</text>
+    <text x="40" y="395">FRIDA.HOOK=TRUE</text>
+    <text x="40" y="410">TIGON.ACTIVE</text>
+  </g>
+
+  <!-- Data stream decoration right side -->
+  <g opacity="0.2" fill="#00ffcc" font-family="Consolas, monospace" font-size="10" text-anchor="end">
+    <text x="1240" y="150">PROTOCOL.READY</text>
+    <text x="1240" y="165">RSA+AES.256.GCM</text>
+    <text x="1240" y="380">SESSION.RESTORE</text>
+    <text x="1240" y="395">RUPLOAD.OK</text>
+    <text x="1240" y="410">BEARER.IGT:2</text>
+  </g>
+
+  <!-- Horizontal accent lines -->
+  <line x1="240" y1="250" x2="500" y2="250" stroke="#ff0044" stroke-width="1" opacity="0.5" filter="url(#glow-pink)"/>
+  <line x1="780" y1="250" x2="1040" y2="250" stroke="#00ffcc" stroke-width="1" opacity="0.5" filter="url(#glow-cyan)"/>
+  <line x1="240" y1="390" x2="500" y2="390" stroke="#00ffcc" stroke-width="1" opacity="0.3"/>
+  <line x1="780" y1="390" x2="1040" y2="390" stroke="#ff0044" stroke-width="1" opacity="0.3"/>
+
+  <!-- Background circles -->
+  <g opacity="0.06" fill="none" stroke="#00ffcc" stroke-width="3">
+    <circle cx="640" cy="320" r="180"/>
+    <circle cx="640" cy="320" r="160"/>
+  </g>
+
+  <!-- Main title: Instagram_API -->
+  <text x="640" y="300" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="90" fill="#00ffcc" filter="url(#glow-title)" letter-spacing="6">
+    Instagram_API
+  </text>
+
+  <!-- Glitch effect layer -->
+  <text x="643" y="300" text-anchor="middle" font-family="'Segoe UI', Arial, sans-serif" font-weight="900" font-size="90" fill="#ff0044" opacity="0.15" letter-spacing="6">
+    Instagram_API
+  </text>
+
+  <!-- Subtitle -->
+  <text x="640" y="345" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="18" fill="#ffffff" opacity="0.7" letter-spacing="10">
+    INSTAGRAM PRIVATE API FOR PYTHON
+  </text>
+
+  <!-- Divider dots -->
+  <g fill="#ff0044" opacity="0.6">
+    <circle cx="530" cy="370" r="2"/>
+    <circle cx="545" cy="370" r="2"/>
+    <circle cx="560" cy="370" r="2"/>
+  </g>
+  <g fill="#00ffcc" opacity="0.6">
+    <circle cx="720" cy="370" r="2"/>
+    <circle cx="735" cy="370" r="2"/>
+    <circle cx="750" cy="370" r="2"/>
+  </g>
+
+  <!-- Feature tags -->
+  <g font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#ffffff" opacity="0.5" text-anchor="middle">
+    <text x="370" y="430">FEED</text>
+    <text x="500" y="430">UPLOAD</text>
+    <text x="640" y="430">DIRECT</text>
+    <text x="780" y="430">MEDIA</text>
+    <text x="910" y="430">ACCOUNT</text>
+  </g>
+
+  <!-- Tag brackets -->
+  <g stroke="#00ffcc" stroke-width="1" fill="none" opacity="0.3">
+    <rect x="335" y="415" width="70" height="22" rx="2"/>
+    <rect x="462" y="415" width="76" height="22" rx="2"/>
+    <rect x="603" y="415" width="74" height="22" rx="2"/>
+    <rect x="745" y="415" width="70" height="22" rx="2"/>
+    <rect x="868" y="415" width="84" height="22" rx="2"/>
+  </g>
+
+  <!-- Bottom credit -->
+  <text x="640" y="580" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="14" fill="#ff0044" opacity="0.5" letter-spacing="4">
+    // LDT SYSTEM
+  </text>
+
+  <!-- Scanline overlay -->
+  <rect width="1280" height="640" fill="url(#scanlines)"/>
+</svg>
