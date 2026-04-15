@@ -13,6 +13,7 @@ from ..constants import (
 from ..bloks import build_bloks_body
 from ..crypto import encrypt_password
 from ..models import LoginResponse, Response
+from ..totp import generate_totp
 
 
 def _extract_login_data(action: str) -> dict | None:
@@ -88,7 +89,8 @@ class AuthMixin:
 
     def login(self, username: str, password: str,
               two_factor_code: str | None = None,
-              two_factor_handler=None) -> LoginResponse:
+              two_factor_handler=None,
+              totp_secret: str | None = None) -> LoginResponse:
         """Full login flow with automatic session management.
 
         1. Check if sessions/_username.json exists
@@ -103,6 +105,9 @@ class AuthMixin:
             two_factor_code: 2FA code to use directly (skip prompt)
             two_factor_handler: Callable that returns a 2FA code string.
                                 Defaults to input() prompt if not provided.
+            totp_secret: TOTP secret key (base32) for automatic 2FA.
+                         Example: "BJ4G MWVY 2KL6 ZSVN TVLA 4DEE MFKV PWOU"
+                         When provided, 2FA codes are generated automatically.
 
         Returns:
             LoginResponse with login result
@@ -145,6 +150,8 @@ class AuthMixin:
             self._2fa_context = context_data
 
             code = two_factor_code
+            if not code and totp_secret:
+                code = generate_totp(totp_secret)
             if not code and context_data:
                 if two_factor_handler:
                     code = two_factor_handler()

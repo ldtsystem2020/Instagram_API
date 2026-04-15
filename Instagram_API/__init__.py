@@ -1,4 +1,5 @@
 from .client import InstagramAPI
+from .totp import generate_totp
 from .models import (
     Response,
     User,
@@ -31,6 +32,7 @@ from .models import (
 
 __all__ = [
     "InstagramAPI",
+    "generate_totp",
     "Response",
     "User",
     "UserInfoResponse",
