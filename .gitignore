@@ -26,5 +26,7 @@ _archive/
 *.mp4
 frida-server-*
 
+test_example/
+
 .claude/
 CLAUDE.md
